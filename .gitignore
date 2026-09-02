@@ -1,0 +1,7 @@
+# OS and Dropbox noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.tmp
+*conflicted copy*
