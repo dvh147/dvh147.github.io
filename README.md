@@ -8,17 +8,21 @@ Live at <https://dvh147.github.io>.
 ## Layout
 
 ```
-index.html            Homepage
+index.html            Homepage ("About")
 research.html         Journal articles, working papers, work in progress
 policy.html           Policy reports
-teaching.html         Courses and supervision
+teaching.html         Courses, workshops and supervision
 writing.html          Index of posts, and a pointer to Research Notes
 404.html              Shown for any URL that does not exist
 posts/                One HTML file per post
 assets/style.css      All styling for the whole site
-assets/files/         The CV, the portrait photo, images used in posts
+assets/files/         CV, portrait, institutional logos, post images
 .nojekyll             Tells GitHub to serve the files as-is
 ```
+
+The layout is a fixed sidebar on the left (name, photo, role, navigation, the
+three institutional logos) with the content on the right. Below 928px it stacks
+into one column.
 
 The separate `research-notes` repository is published at
 <https://dvh147.github.io/research-notes/> and is linked from this site. It stays its own
@@ -27,11 +31,17 @@ repository, so the agent that writes those notes keeps working unchanged.
 ## Editing
 
 Every page is a single self-contained HTML file. Open it, change the words, save. The
-navigation bar is repeated at the top of each file — if you add or rename a page, update
-that block in every file (there are seven).
+`<aside class="sidebar">` block is repeated in each file — if you add or rename a page,
+update that block in all seven, and move the `aria-current="page"` marker to the right link.
 
 Colours, fonts and spacing all live at the top of `assets/style.css` as variables. Change a
-value there and the whole site follows.
+value there and the whole site follows. The accent is SKEMA's own red, `#e7433c`, darkened
+to `#c9352c` for link text so it clears the WCAG AA contrast threshold on white; the
+brighter original is kept for the rules under headings.
+
+The logos were cut from `Dropbox (Personal)/Templates/2025logos.png` and the portrait from
+`ProfilePics/SKEMA-Small-file.jpg`. In dark mode the logos sit on a white chip, because the
+SKEMA and LSE marks are near-black and would otherwise disappear.
 
 Spots that need your attention are marked in the HTML with `<!-- EDIT: ... -->` comments.
 
